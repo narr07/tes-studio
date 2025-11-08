@@ -5,15 +5,20 @@ export default defineNuxtConfig({
     'nuxt-studio'
   ],
     studio: {
-
     route: '/_studio',
-
     repository: {
       provider: 'github', // only GitHub is currently supported
       owner: 'narr07', // your GitHub username or organization
       repo: 'tes-studio', // your repository name
-      branch: 'master', // the branch to commit to (default: main)
-      rootDir: '' // optional: if your Nuxt app is in a subdirectory (default: '')
+      branch: 'master', // the branch to commit to (default: main))
+    }
+  },
+    nitro: {
+    prerender: {
+      // Pre-render the homepage
+      routes: ['/'],
+      // Then crawl all the links on the page
+      crawlLinks: true
     }
   },
   devtools: { enabled: true },
